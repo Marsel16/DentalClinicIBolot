@@ -1,0 +1,16 @@
+.env/
+venv
+.idea
+/site
+
+
+static/
+/static/
+*/static/
+
+media/
+/media/
+*/media/
+
+*/migrations/*
+!*/migrations/__init__.py
