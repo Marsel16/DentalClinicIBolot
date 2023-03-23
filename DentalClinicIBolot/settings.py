@@ -21,11 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = 'django-insecure-he6l1@#9%&vj)km^*+=@w+vhqfvq&j+hsz!)7lb3f0m*p03%v7'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-    # if os.environ.get('DEBUG') == 'ON' else False
+DEBUG = True if os.environ.get('DEBUG') == 'on' else False
 
 ALLOWED_HOSTS = ['*']
 
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'phonenumber_field',
+    'drf_yasg',
 
     'users',
     'doctors'
@@ -97,7 +97,12 @@ WSGI_APPLICATION = 'DentalClinicIBolot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3'
+        # 'NAME': os.environ.get('DB_NAME'),
+        # 'USER': os.environ.get('DB_USER'),
+        # 'PASSWORD': os.environ.get('DB_PASSWORD'),
+        # 'PORT': os.environ.get('DB_PORT'),
+        # 'HOST': os.environ.get('DB_HOST'),
     }
 }
 

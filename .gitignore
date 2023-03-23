@@ -1,9 +1,9 @@
-.env/
+.env
 venv
 .idea
+__pycache__/
 /site
-
-
+db.sqlite3
 static/
 /static/
 */static/
